@@ -1,10 +1,12 @@
-import { Welcome } from "./Welcome";
 import "./App.css";
+import { Login } from "./Login";
 
 function App() {
   return (
     <>
-      <Welcome name={"Richard"} age={16} />
+      <div>
+        <Login />
+      </div>
     </>
   );
 }

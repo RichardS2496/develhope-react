@@ -20,7 +20,7 @@ export function Login({ onLogin }) {
   const isDisabled = !username || !password;
 
   function handleLoginClick(e) {
-    e.preventDafault();
+    e.preventDefault();
     onLogin({ username, password, check });
   }
 
@@ -33,7 +33,6 @@ export function Login({ onLogin }) {
   return (
     <>
       <form onSubmit={handleLoginClick}>
-        <h1>LOGIN.</h1>
         <input onChange={handleUsernameChange} type="text" value={username} />
         <input
           onChange={handlePasswordChange}

@@ -1,10 +1,10 @@
-import { Welcome } from "./Welcome";
 import "./App.css";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 
 function App() {
   return (
     <>
-      <Welcome name={"Richard"} age={16} />
+      <UncontrolledLogin />
     </>
   );
 }
