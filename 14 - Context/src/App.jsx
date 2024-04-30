@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Clock } from "./Clock";
-import { LanguageContext } from "./LanguageContext";
+import { LanguageContext } from "./context/LanguageContext";
 
 function App() {
   const [lang, setLang] = useState("es");
