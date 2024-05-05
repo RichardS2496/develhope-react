@@ -1,0 +1,36 @@
+.result-section {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #454545;
+  border-radius: 12px;
+}
+
+.img-container {
+  width: 120px;
+  border-radius: 8px;
+}
+
+.img-container img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+.info-container h2,
+h4,
+p {
+  margin: 0;
+  text-align: start;
+  color: rgba(255, 255, 255, 0.87);
+}
