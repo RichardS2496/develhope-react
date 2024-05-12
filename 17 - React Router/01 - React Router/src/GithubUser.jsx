@@ -20,7 +20,7 @@ export function GithubUser() {
   }
 
   return data ? (
-    <section className="result-section">
+    <a href={data.html_url} className="result-section">
       <div className="img-container">
         <img src={data.avatar_url} alt="avatar" />
       </div>
@@ -29,7 +29,7 @@ export function GithubUser() {
         <h4>{data.login}</h4>
         <p>{data.bio}</p>
       </div>
-    </section>
+    </a>
   ) : (
     <p>Loading...</p>
   );
