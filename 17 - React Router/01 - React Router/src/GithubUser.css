@@ -1,0 +1,36 @@
+.result-section {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 1rem;
+  background-color: #727272;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  border-radius: 8px;
+}
+
+.img-container img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.info-container h2,
+h4,
+p {
+  margin: 0;
+  text-align: start;
+}
