@@ -1,31 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { GithubUser } from "./GithubUser";
 
-export function GithubUsersForm({ setUser }) {
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${data}`)
-      .then((res) => res.json())
-      .then((data) => setUser(data));
-  }, [data, setUser]); //usando el useEffect se actualiza sin necesidad de hacer click en el boton del formulario, me queda mejor sin el useEffect para la practica y que el consumo de la API se encuentre dentro de la funcion submit
+export function GithubUsersForm() {
+  const [username, setUsername] = useState("");
+  const [usersArray, setUsersArray] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setUsersArray([...usersArray, username]);
   }
 
   function handleOnChange(e) {
-    setData(e.target.value);
+    setUsername(e.target.value);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={data}
-        onChange={handleOnChange}
-        placeholder="Introduce a GitHub username"
-      />
-      <button type="submit">Search</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={username}
+          onChange={handleOnChange}
+          placeholder="Introduce a GitHub username"
+        />
+        <button type="submit">Search</button>
+      </form>
+      <hr></hr>
+      {usersArray.map((user, index) => {
+        return <GithubUser key={index} data={user} />;
+      })}
+    </>
   );
 }

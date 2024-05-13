@@ -1,21 +1,24 @@
 import "./GithubUser.css";
+import { useState, useEffect } from "react";
 
 export function GithubUser({ data }) {
-  if (!data) {
-    return <p> Check again </p>;
-  }
+  const [user, setUser] = useState(null);
 
-  return data ? (
-    <p></p>
-  ) : (
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${data}`)
+      .then((res) => res.json())
+      .then((userInfo) => setUser(userInfo));
+  }, [data]);
+
+  return (
     <section className="result-section">
       <div className="img-container">
-        <img src={data.avatar_url} alt="avatar" />
+        <img src={user?.avatar_url} alt="avatar" />
       </div>
       <div className="info-container">
-        <h2>{data.name}</h2>
-        <h4>{data.login}</h4>
-        <p>{data.bio}</p>
+        <h2>{user?.name}</h2>
+        <h4>{user?.login}</h4>
+        <p>{user?.bio}</p>
       </div>
     </section>
   );
